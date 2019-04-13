@@ -1,11 +1,11 @@
-# Lesson 01 Hello SDL
+### Lesson 01 Hello SDL
 SDL - a dynamically linked library
 
     -the header files(Library.h)
     -the library files(Library.lib)
     -the binary files(Library.dll)    
     
-# Lesson 02 Getting an Image on the Screen
+### Lesson 02 Getting an Image on the Screen
 ```
 SDL_Init();  //Initializes SDL
 SDL_Window* SDL_CreatWindow(const char* title,  //the title of the window
@@ -33,13 +33,13 @@ int SDL_UpdateWindowSurface(SDL_Window* window);
 SDL_Delay(milliseconds);
 ```
 
-# Lesson 03 Event Driven Programming
+### Lesson 03 Event Driven Programming
 ```
 int SDL_PollEvent(SDL_Event* event);
     event:the SDL_Event structure to be filled with the next event from the queue, or NULL.
 ```
 
-# Lesson 04 Key Presses
+### Lesson 04 Key Presses
 ```
 structure: enum KeyPressSurface
 {
@@ -52,7 +52,7 @@ structure: enum KeyPressSurface
 };
 ```
 
-# Lesson 05 Optimized Surface Loading and Soft Stretching
+### Lesson 05 Optimized Surface Loading and Soft Stretching
 ```
 SDL_Surface* SDL_ConverSurface(SDL_Surface*                 src,        //to convert
                                 const SDL_PixelFormat*      fmt,        //be optimized for
@@ -72,7 +72,7 @@ int SDL_BlitScaled(SDL_Surface*         src,        //to be copied from
                     SDLL_Rect*          dstrect);
 ```
 
-# Lesson 06 Extension Libraries and Loading Other Image Formats
+### Lesson 06 Extension Libraries and Loading Other Image Formats
 ```
 import SDL_image.h
 int IMG_Init(int flags);
@@ -81,7 +81,7 @@ int IMG_Init(int flags);
             IMG_INIT_TIF    0X04
 ```
 
-# Lesson 07 Texture Loading and Rendering
+### Lesson 07 Texture Loading and Rendering
 ```
 SDL_Renderer ≈ SDL_Surface* gScreenSurface
 SDL_texture  ≈ SDL_Surface* gHelloworld
