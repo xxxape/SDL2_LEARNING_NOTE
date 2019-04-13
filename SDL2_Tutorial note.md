@@ -1,4 +1,4 @@
-### Lesson 01 Hello SDL
+﻿### Lesson 01 Hello SDL
 SDL - a dynamically linked library
 
     -the header files(Library.h)
@@ -112,3 +112,6 @@ int SDL_RenderCopy(SDL_Renderer*    renderer,
                    const SDL_Rect*  dstrect);   //texture's position in renderer
 
 void SDL_RenderPresent(SDL_Renderer* renderer); //undate the screen with any rendering performed since the previous call
+
+
+111test
