@@ -104,11 +104,11 @@ int SDL_SetRenderDrawColor(SDL_Renderer*    renderer,
 SDL_Texture* SDL_CreateTextureFromSurface(SDL_Renderer* renderer,
                                           SDL_Surface*  surface);
 
-int SDL_RenderClear(SDL_Renderer* renderer) //上色
+int SDL_RenderClear(SDL_Renderer* renderer)     //clear the current rendering target with the drawing color
 
 int SDL_RenderCopy(SDL_Renderer*    renderer,
                    SDL_Texture*     texture,
                    const SDL_Rect*  srcrect,    //texture's size
                    const SDL_Rect*  dstrect);   //texture's position in renderer
 
-void SDL_RenderPresent(SDL_Renderer* renderer);
+void SDL_RenderPresent(SDL_Renderer* renderer); //undate the screen with any rendering performed since the previous call
