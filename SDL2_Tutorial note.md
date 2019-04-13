@@ -53,3 +53,62 @@ structure: enum KeyPressSurface
 ```
 
 # Lesson 05 Optimized Surface Loading and Soft Stretching
+```
+SDL_Surface* SDL_ConverSurface(SDL_Surface*                 src,        //to convert
+                                const SDL_PixelFormat*      fmt,        //be optimized for
+                                uint32                      flags);
+
+SDL_Rect
+{
+    int x,  //the x location of the rectangle's upper left corner
+    int y,  //the y location of the rectangle's upper left corner
+    int w,  //the width of the rectangle
+    int h  //the height of the rectangle
+}
+
+int SDL_BlitScaled(SDL_Surface*         src,        //to be copied from
+                    const SDL_Rect*     srcrect,
+                    SDL_Surface*        dst,        //the blit target
+                    SDLL_Rect*          dstrect);
+```
+
+# Lesson 06 Extension Libraries and Loading Other Image Formats
+```
+import SDL_image.h
+int IMG_Init(int flags);
+    flags:  IMG_INIT_JPG    0X01
+            IMG_INIT_PNG    0X02
+            IMG_INIT_TIF    0X04
+```
+
+# Lesson 07 Texture Loading and Rendering
+```
+SDL_Renderer ≈ SDL_Surface* gScreenSurface
+SDL_texture  ≈ SDL_Surface* gHelloworld
+
+SDL_bool SDL_SetHint(const char* name,
+                     const char* value);
+    SDL_SetHint(SDL_HINT_RENDER_SCALE.QUALITY, "1");
+    
+SDL_Renderer* SDL_CreateRenderer(SDL_Window*    window,
+                                 int            index,
+                                 uint32         flags);
+    SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+    
+int SDL_SetRenderDrawColor(SDL_Renderer*    renderer,
+                           uint8            r,
+                           uint8            g,
+                           uint8            b,
+                           uint8            a);
+
+SDL_Texture* SDL_CreateTextureFromSurface(SDL_Renderer* renderer,
+                                          SDL_Surface*  surface);
+
+int SDL_RenderClear(SDL_Renderer* renderer) //上色
+
+int SDL_RenderCopy(SDL_Renderer*    renderer,
+                   SDL_Texture*     texture,
+                   const SDL_Rect*  srcrect,    //texture's size
+                   const SDL_Rect*  dstrect);   //texture's position in renderer
+
+void SDL_RenderPresent(SDL_Renderer* renderer);
