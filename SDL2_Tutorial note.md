@@ -9,9 +9,9 @@
 - [Lesson 08 Geometry Rendering](#lesson-08-geometry-rendering)
 - [Lesson 09 The Viewport](#lesson-09-the-viewport)
 - [Lesson 10 Color Key](#lesson-10-color-key)
-- []()
-- []()
-- []()
+- [Lesson 11 Clip Rendering and Sprite Sheets](#lesson-11-clip-rendering-and-sprite-sheets)
+- [Lesson 12 Color Modulation](#lesson-12-color-modulation)
+- [Lesson 13 Alpha Blending](#lesson-13-alpha-blending)
 - []()
 - []()
 
@@ -168,8 +168,66 @@ int SDL_RenderSetViewPort(SDL_Renderer* renderer,
 ```
 
 ### Lesson 10 Color Key
+```
+Class LTexture{
+    public:
+        //Initializes variables
+        LTexture();
+        //Deallocates memory
+        ~LTexture();
+        //Loadimage at specified path
+        bool loadFramFile(std::string path);
+        //Deallocates texture
+        void free();
+        //Renders texture at given point
+        void render(int x, int y)
+        //Get image dimensions
+        int getWidth();
+        int getHeight();
+    private:
+        //The actual hardware texture
+        SDL_Texture* mTexture;
+        //Image dimensions
+        int mWidth;
+        int mHeight;
+}
 
+//set the color key(transparent pixel) in a surface
+int SDL_SetColorKey(SDL_Surface* surface,
+                    int flag,               //SDL_TRUE or SDL_FALSE
+                    Uint32 key);
 
+SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface -> format, 0, 0xff, 0xff);
+```
+
+### Lesson 11 Clip Rendering and Sprite Sheets
+```
+//把图片分成4个部分
+SDL_Rect gSpriteClips[4]; 
+//把clip大小的mTexture放在gRenderer的&renderQuad位置
+SDL_RenderCopy(gRenderer, mTextire, clip, &renderQuad)
+```
+
+### Lesson 12 Color Modulation
+```
+SDL_SetTextureColorMod(SDL_Texture* texture,
+                        Uint8 r,
+                        Uint8 g,
+                        Uint8 b);
+//srcC = scrC × (color / 255)
+```
+例：原色(255, 255, 0)
+    输入(255, 128, 255)
+    得 (255, 128, 0)
+
+### Lesson 13 Alpha Blending
+```
+int SDL_SetTextureBlendMode(SDL_Texture* texture,
+                            SDL_BlendMode blendMode);
+int SDL_SetTextureAlphaMod(SDL_Texture* texture,
+                           Uint8 alpha);
+//srcA = srcA × (alpha / 255)
+```
 
 
 111test
