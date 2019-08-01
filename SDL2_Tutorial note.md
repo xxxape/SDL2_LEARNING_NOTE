@@ -222,6 +222,7 @@ SDL_SetTextureColorMod(SDL_Texture* texture,
 
 ### Lesson 13 Alpha Blending
 ```
+//set the blend mode for a texture
 int SDL_SetTextureBlendMode(SDL_Texture* texture,
                             SDL_BlendMode blendMode);
 int SDL_SetTextureAlphaMod(SDL_Texture* texture,
