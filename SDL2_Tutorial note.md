@@ -1,3 +1,7 @@
+npm install -g doctoc
+doctoc SDL2_Tutorial note.md
+
+
 ### Lesson 01 Hello SDL
 SDL - a dynamically linked library
 
