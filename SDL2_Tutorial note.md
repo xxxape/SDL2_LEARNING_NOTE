@@ -1,4 +1,4 @@
-﻿### Lesson 01 Hello SDL
+### Lesson 01 Hello SDL
 SDL - a dynamically linked library
 
     -the header files(Library.h)
@@ -112,6 +112,46 @@ int SDL_RenderCopy(SDL_Renderer*    renderer,
                    const SDL_Rect*  dstrect);   //texture's position in renderer
 
 void SDL_RenderPresent(SDL_Renderer* renderer); //undate the screen with any rendering performed since the previous call
+```
+
+### Lesson 08 Geometry Rendering
+```
+//fill a rectangle on the current rendering target with the drawing color
+int SDL_RenderFillRect(SDL_Renderer* renderer,  //the rendering context
+                        const SDL_Rect* rect);  //the rectangle to fill, or NULL for the entire rendering target 
+
+//draw a rectangle on the current rendering target
+int SDL_RenderDrawRect(SDL_Renderer* renderer,
+                        const SDL_Rect* rect);
+
+//draw a line on the current rendering target from (x1, y1) to (x2, y2)
+int SDL_RenderDrawLine(SDL_Renderer* renderer,
+                        int x1,
+                        int y1,
+                        int x2,
+                        int y2);
+
+//draw a point on the current rendering target
+int SDL_RenderDrawPoint(SDL_Renderer* renderer,
+                        int x,
+                        int y);
+```
+
+### Lesson 09 The Viewport
+```
+//Top left corner viewport
+SDL_Rect topletfView;
+topleftView.x = 0;
+topleftView.y = 0;
+topleftView.w = SCREEN_WIDTH/2;
+topleftView.h = SCREEN_HEIGHT/2;
+int SDL_RenderSetViewPort(SDL_Renderer* renderer,
+                          const SSDL_Rect* rect)    //set the drawing area
+```
+
+### Lesson 10 Color Key
+
+
 
 
 111test
