@@ -1,6 +1,5 @@
 # 目录
-[toc]
-### Lesson 01 Hello SDL
+[Lesson 01 Hello SDL](#lesson-01-hello-sdl)
 
 
 ### Lesson 01 Hello SDL
