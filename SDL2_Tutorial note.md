@@ -1,5 +1,6 @@
-npm install -g doctoc
-doctoc SDL2_Tutorial note.md
+# 目录
+[toc]
+### Lesson 01 Hello SDL
 
 
 ### Lesson 01 Hello SDL
